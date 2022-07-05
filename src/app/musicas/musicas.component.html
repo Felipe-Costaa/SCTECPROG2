@@ -1,0 +1,16 @@
+<h1>Minha Bibliotecade Musicas</h1>
+<h2>Categoria: {{categoriaMusica.name}}</h2>
+
+    <ul *ngFor="let musica of listaMusicas">
+        <li>Musica: {{musica.filename}}</li>        
+    </ul>
+
+
+<form #myForm="ngForm" (submit)="postMusic(myForm)">
+<p>Nova musica:</p>
+<div>
+    <label for="filename">Nome:</label>
+    <input type="text" name="filename" [(ngModel)]="novaMusica.filename">
+</div>
+<input type="submit" value="Salvar">
+</form>
